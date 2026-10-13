@@ -1,9 +1,11 @@
-# Super Model game preview
+# Super Model OVH preview
 
-Deployment wrapper for a separately hosted, playable visual novel preview on OVH. This is a review build, with final creative and physical-device acceptance still pending.
+Checkpoint core-v12/native-v30. Downloaded release is SHA-256 pinned in Dockerfile.
+Includes 30 looks, 139 preserved character voice lines, VN and turn combat.
+Sami and Claudia have actual native actors. Three remaining native characters,
+whole-campaign listening, physical device performance and full artistic acceptance
+remain open. Main-site integration is deferred.
 
-The runtime-v8 release contains the compiled public game files. Its ZIP SHA-256 is 4163b3ef0bdd39262b4358e8e91683e2be066fa55b8943d4d562a82636a10978. The Docker build verifies that digest before unpacking; working files, voice profiles and audition material are excluded.
-
-NGINX listens on port 8080. Coolify provides HTTPS. No application backend, database, analytics or credentials are required. Player saves remain in the browser on this origin; the in-game export/import controls can move saves when the game is integrated into the main website.
-
-This version adds short sentence-paged original voices, an authored opening over the approved room, soundtrack/SFX/ambience, consistent action frames and the existing native Unity arena. It does not implement the future rigged 3D heroine combat pilot. The locally generated LTX candidate changed the room and is excluded.
+Use the shared OVH serialized builder and health-gated native rolling deployment.
+No GitHub Actions. Preserve prior hashed assets for clients with the old page open.
+Preview: https://supermodel-preview.46.105.118.14.sslip.io/?combat=1
