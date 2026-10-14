@@ -1,0 +1,30 @@
+name: OVH image
+on:
+  push:
+    branches: ["codex/ovh-preview"]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ovh-image-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  image:
+    runs-on: ${{ vars.CI_RUNNER_LINUX || 'blacksmith-4vcpu-ubuntu-2404' }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Detect accepted Docker recipe
+        id: recipe
+        shell: bash
+        run: |
+          if test -f Dockerfile; then echo 'present=true' >> "$GITHUB_OUTPUT"; else echo 'No Dockerfile at this source commit; no image build or deployment.'; fi
+      - name: Build frozen image and receipt; never deploy
+        if: steps.recipe.outputs.present == 'true'
+        uses: eleventake/ovh-builds@dae2be0796039c4e08c1c78145b19d1362ffb787
+        with:
+          project: "Super Model preview"
+          target_uuid: "ccxdk8nxabclee1rxdlaa4ap"
+          public_build_env: ${{ vars.OVH_PUBLIC_BUILD_ENV || '{}' }}
