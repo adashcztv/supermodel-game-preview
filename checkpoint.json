@@ -1,21 +1,37 @@
 {
-  "checkpoint": "core-v14/native-v30",
-  "archive_sha256": "8af3b3a935da48759bb26b71bae5c571ce68a2ff4347444850a046b1e03061b4",
-  "artifact_files": 348,
-  "source": "Unity native-v30 unchanged + frozen Vite combat UI v14/v5",
-  "scope": "Single-player functional preview. Models/animations held; whole-game, art, story and physical-device acceptance open.",
+  "checkpoint": "core-v15/native-v30",
+  "archive_sha256": "3ab89db3b8b47d5379d74eeb4c97312555c96949421ffb2d807c332c6d0e1b4c",
+  "artifact_files": 353,
+  "game_source_commit": "3a4c00afe41ff4dc0a92654842df5ed8666de356",
+  "source": "Frozen local Vite v15 + native-v30 unchanged",
+  "scope": "Single-player functional preview. Models/animations held; whole-game, artistic, story/voice and physical-device acceptance open.",
   "old_assets_preserved": [
+    "assets/combat-3mBX6nRb.js",
+    "assets/combat-C8g49NRp.css",
+    "assets/score-progress-CVXA0Tlg.js",
+    "assets/story-59sOM4gA.js",
+    "assets/story-v-L7O9Ps.css",
     "assets/combat-B48uJ5Mt.css",
     "assets/combat-CbzOQade.js",
     "assets/combat-DAC04E6F.js",
     "assets/index-Bt25a6Td.js",
     "assets/index-CjXYhL70.css"
   ],
+  "changes": [
+    "Permanent memories after older bookmark",
+    "Short epilogues and restored portrait draw",
+    "Save/Load empty state and House roster/refuge",
+    "Compact pause menu",
+    "Saved tactical mode; new stories tactical by default; legacy saves retained"
+  ],
   "checks": {
-    "unit": 175,
-    "unchanged_gameplay_browser": 92,
-    "final_ui_browser": 12,
-    "ui_viewports_per_engine": 7
+    "local_frozen_chromium_startup": true,
+    "native_inputs_unchanged": 233,
+    "focused_core_tests": 88,
+    "webkit_changed_flow_receipt": {
+      "passed": true,
+      "scope": "Saved mode, short endings/keyboard, permanent gallery, one native pending pause/resume; not full campaign/device acceptance"
+    }
   },
-  "gameplay_reuse_proof": "Combat JavaScript v4/v5 differs only by CSS filename; other six JS and native inputs unchanged."
+  "whole_game_complete": false
 }
