@@ -1,17 +1,21 @@
 {
-  "checkpoint": "core-v13/native-v30",
-  "archive_sha256": "168c16424f1be40b367d9767b1344f83708ccab65a4cc1e07f6e4af076354241",
-  "artifact_files": 346,
-  "source": "Existing Unity 6000.6.0f1 native-v30 + accepted Vite support-audio build",
-  "scope": "Single-player functional preview; native models/animations unchanged and held. Whole game/art/device/story acceptance open.",
+  "checkpoint": "core-v14/native-v30",
+  "archive_sha256": "8af3b3a935da48759bb26b71bae5c571ce68a2ff4347444850a046b1e03061b4",
+  "artifact_files": 348,
+  "source": "Unity native-v30 unchanged + frozen Vite combat UI v14/v5",
+  "scope": "Single-player functional preview. Models/animations held; whole-game, art, story and physical-device acceptance open.",
   "old_assets_preserved": [
+    "assets/combat-B48uJ5Mt.css",
+    "assets/combat-CbzOQade.js",
     "assets/combat-DAC04E6F.js",
     "assets/index-Bt25a6Td.js",
     "assets/index-CjXYhL70.css"
   ],
   "checks": {
     "unit": 175,
-    "local_browser": 102,
-    "stereo_pcm_sounds_per_engine": 6
-  }
+    "unchanged_gameplay_browser": 92,
+    "final_ui_browser": 12,
+    "ui_viewports_per_engine": 7
+  },
+  "gameplay_reuse_proof": "Combat JavaScript v4/v5 differs only by CSS filename; other six JS and native inputs unchanged."
 }
