@@ -1,0 +1,75 @@
+name: Frozen OVH image on Blacksmith
+description: Cached source-verified image build, artifact receipt, no deployment
+inputs:
+  project:
+    required: true
+    description: Registered OVH project name
+  target_uuid:
+    required: true
+    description: Actual OVH target UUID or unbound for build-only new source
+  dockerfile:
+    default: Dockerfile
+    description: Dockerfile path in selected source
+  public_build_env:
+    default: '{}'
+    description: Allowlisted public build inputs; never private runtime credentials
+outputs:
+  image_id:
+    value: ${{ steps.image.outputs.imageid }}
+    description: Exact built image digest
+  source_sha256:
+    value: ${{ steps.source.outputs.source_sha256 }}
+    description: Complete frozen source manifest digest
+runs:
+  using: composite
+  steps:
+    - name: Freeze and verify exact selected commit
+      id: source
+      shell: bash
+      env:
+        OVH_PROJECT: ${{ inputs.project }}
+        OVH_TARGET_UUID: ${{ inputs.target_uuid }}
+        OVH_DOCKERFILE: ${{ inputs.dockerfile }}
+        OVH_PUBLIC_BUILD_ENV: ${{ inputs.public_build_env }}
+      run: python3 "$GITHUB_ACTION_PATH/runner.py" repository
+    - uses: useblacksmith/setup-docker-builder@19215110ab936351210feebdfa5b440b4493e184
+      with:
+        cache-key: ${{ steps.source.outputs.cache_key }}
+    - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ github.token }}
+    - uses: useblacksmith/build-push-action@9b0579bbec7a6cad2f171596c57e7ac1e7658850
+      id: image
+      with:
+        context: ${{ steps.source.outputs.context }}
+        file: ${{ steps.source.outputs.dockerfile }}
+        platforms: linux/amd64
+        push: true
+        tags: ${{ steps.source.outputs.registry_tag }}
+        provenance: false
+        labels: |
+          org.ovh.source.sha256=${{ steps.source.outputs.source_sha256 }}
+          org.ovh.build.inputs.sha256=${{ steps.source.outputs.inputs_sha256 }}
+          org.opencontainers.image.source=https://github.com/${{ github.repository }}
+        build-args: OVH_BUILD_INPUTS_SHA=${{ steps.source.outputs.inputs_sha256 }}
+        secret-files: build_env=${{ steps.source.outputs.env_file }}
+    - name: Preserve immutable image reference and source-bound build receipt
+      shell: bash
+      env:
+        IMAGE_ID: ${{ steps.image.outputs.imageid }}
+        REGISTRY_TAG: ${{ steps.source.outputs.registry_tag }}
+        REGISTRY_DIGEST: ${{ steps.image.outputs.digest }}
+      run: |
+        export IMAGE_REFERENCE="${REGISTRY_TAG%:*}@${REGISTRY_DIGEST}"
+        export BUILD_SECONDS=$(python3 -c 'import json,time,os;print(round(time.time()-json.load(open(os.environ["RUNNER_TEMP"]+"/ovh-build/started.json"))["at"],3))')
+        python3 "$GITHUB_ACTION_PATH/runner.py" receipt
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: ovh-image-${{ github.sha }}-${{ github.run_id }}
+        path: |
+          ${{ runner.temp }}/ovh-build/receipt.json
+        compression-level: 0
+        retention-days: 7
+        if-no-files-found: error
