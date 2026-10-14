@@ -1,37 +1,36 @@
 {
-  "checkpoint": "core-v15/native-v30",
-  "archive_sha256": "3ab89db3b8b47d5379d74eeb4c97312555c96949421ffb2d807c332c6d0e1b4c",
-  "artifact_files": 353,
-  "game_source_commit": "3a4c00afe41ff4dc0a92654842df5ed8666de356",
-  "source": "Frozen local Vite v15 + native-v30 unchanged",
-  "scope": "Single-player functional preview. Models/animations held; whole-game, artistic, story/voice and physical-device acceptance open.",
+  "checkpoint": "core-v16/native-v30",
+  "archive_sha256": "e68d9e386750f8030742c49d523f8d55ba7baf3f44ec99b86dec043cbb6f1bf5",
+  "artifact_files": 355,
+  "game_source_commit": "48d2cc9329a73bd67aa4433950bd54b66bf202f4",
+  "source": "Frozen local Vite v16; reviewed native v30 unchanged",
+  "scope": "Stable single-player preview; remaining native actors, full art/story/listening and physical-device acceptance remain open.",
   "old_assets_preserved": [
+    "assets/combat-2ayK_ft2.css",
     "assets/combat-3mBX6nRb.js",
-    "assets/combat-C8g49NRp.css",
-    "assets/score-progress-CVXA0Tlg.js",
-    "assets/story-59sOM4gA.js",
-    "assets/story-v-L7O9Ps.css",
     "assets/combat-B48uJ5Mt.css",
+    "assets/combat-BcWAOhq9.js",
+    "assets/combat-C8g49NRp.css",
     "assets/combat-CbzOQade.js",
     "assets/combat-DAC04E6F.js",
     "assets/index-Bt25a6Td.js",
-    "assets/index-CjXYhL70.css"
+    "assets/index-CjXYhL70.css",
+    "assets/score-progress-CVXA0Tlg.js",
+    "assets/story-59sOM4gA.js",
+    "assets/story-v-L7O9Ps.css"
   ],
   "changes": [
-    "Permanent memories after older bookmark",
-    "Short epilogues and restored portrait draw",
-    "Save/Load empty state and House roster/refuge",
-    "Compact pause menu",
-    "Saved tactical mode; new stories tactical by default; legacy saves retained"
+    "Horizontal tactical decision row; responsive labels and actual ally inspect",
+    "Fresh practice uses campaign encounter and assistance; legacy saved duels retained"
   ],
   "checks": {
-    "local_frozen_chromium_startup": true,
+    "unit_passed": 183,
     "native_inputs_unchanged": 233,
-    "focused_core_tests": 88,
-    "webkit_changed_flow_receipt": {
-      "passed": true,
-      "scope": "Saved mode, short endings/keyboard, permanent gallery, one native pending pause/resume; not full campaign/device acceptance"
-    }
-  },
-  "whole_game_complete": false
+    "two_engine_ui_layouts": 7,
+    "natural_practice_engines": [
+      "chromium",
+      "webkit"
+    ],
+    "whole_game_complete": false
+  }
 }

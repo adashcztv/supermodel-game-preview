@@ -1,18 +1,8 @@
-# Super Model preview — core v15 / native v30
+# Super Model separate OVH preview
 
-Frozen single-player visual novel and Unity tactical combat checkpoint for the
-separate OVH preview. New stories use tactical combat; saved mode, bookmarks
-and portable backups survive returning to the story. Legacy match-3 saves
-remain supported. Includes shorter epilogues, permanent memories, House
-profiles and compact combat pause/settings.
-
-Game source: `3a4c00afe41ff4dc0a92654842df5ed8666de356`.
-The archive digest and preserved old assets are in `checkpoint.json`.
-Native v30 and approved artwork/voices are unchanged. Sami and Claudia are
-implemented native actors; remaining actors and model/animation authoring are
-held for the user's validation. This checkpoint does not establish whole-game,
-artistic, full listening or physical-device acceptance.
-
-GitHub Actions and implicit deployment stay disabled. Publishing this wrapper
-commit or building its image does not deploy. Use the accepted shared OVH
-serialized builder, separate release acceptance, and SM native rolling adapter.
+core-v16/native-v30, frozen game source48d2cc9329a73bd67aa4433950bd54b66bf202f4.
+Archive and old-client files are pinned by checkpoint.json; Actions stay disabled.
+UI-only stable release: current practice, compact decision row, contextual ally
+details, unchanged native runtime. Whole-game/AAA art/device acceptance is open.
+Use the registered shared builder and SM native rolling release adapter. A Git
+push or image build is not release acceptance. Main-site integration deferred.
