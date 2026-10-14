@@ -1,11 +1,17 @@
 {
-  "checkpoint": "core-v12/native-v30",
-  "archive_sha256": "4cdfc70098bfbd1b3402a659f3b474ca54664fccb1db5c404f2d3ac254ac50f8",
-  "artifact_files": 345,
-  "source": "Supermodel/game Unity 6000.6.0f1 + selected Vite build",
-  "scope": "Single-player preview. Sami and Claudia native; other three native characters and whole-game/device/art acceptance remain open.",
+  "checkpoint": "core-v13/native-v30",
+  "archive_sha256": "168c16424f1be40b367d9767b1344f83708ccab65a4cc1e07f6e4af076354241",
+  "artifact_files": 346,
+  "source": "Existing Unity 6000.6.0f1 native-v30 + accepted Vite support-audio build",
+  "scope": "Single-player functional preview; native models/animations unchanged and held. Whole game/art/device/story acceptance open.",
   "old_assets_preserved": [
+    "assets/combat-DAC04E6F.js",
     "assets/index-Bt25a6Td.js",
     "assets/index-CjXYhL70.css"
-  ]
+  ],
+  "checks": {
+    "unit": 175,
+    "local_browser": 102,
+    "stereo_pcm_sounds_per_engine": 6
+  }
 }

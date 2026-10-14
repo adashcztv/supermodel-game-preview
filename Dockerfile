@@ -1,8 +1,8 @@
 FROM nginxinc/nginx-unprivileged:stable-alpine
 USER root
 RUN rm -rf /usr/share/nginx/html/* \
-    && wget -q -O /tmp/release.zip https://github.com/adashcztv/supermodel-game-preview/releases/download/core-v12-native-v30/supermodel-core-v12.zip \
-    && echo "4cdfc70098bfbd1b3402a659f3b474ca54664fccb1db5c404f2d3ac254ac50f8  /tmp/release.zip" | sha256sum -c - \
+    && wget -q -O /tmp/release.zip https://github.com/eleventake/supermodel-game-preview/releases/download/core-v13-support-audio-native-v30/supermodel-core-v13.zip \
+    && echo "168c16424f1be40b367d9767b1344f83708ccab65a4cc1e07f6e4af076354241  /tmp/release.zip" | sha256sum -c - \
     && unzip -q /tmp/release.zip -d /usr/share/nginx/html \
     && rm /tmp/release.zip
 COPY nginx.conf /etc/nginx/conf.d/default.conf
