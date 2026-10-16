@@ -12,4 +12,6 @@ Install once in any scratch folder: `npm install playwright@1.63.0` (browsers fr
 - `[SM_RUNTIME=<runtime.json>] node regress-extra.mjs <baseUrl>` checks keyboard focus restore, Skip/Menu/House
   pointer paths and F3 (page hidden for 25 s during the native start).
 
+- `node f3-never-ready.mjs <baseUrl>` blocks `sm-combat-ready` on a visible page and expects the start error after the visible budget.
+
 Local only; never point these at production with real player data.
