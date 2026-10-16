@@ -1,18 +1,27 @@
 {
-  "checkpoint": "core-v16/native-v30",
-  "archive_sha256": "e68d9e386750f8030742c49d523f8d55ba7baf3f44ec99b86dec043cbb6f1bf5",
-  "artifact_files": 355,
-  "game_source_commit": "48d2cc9329a73bd67aa4433950bd54b66bf202f4",
-  "source": "Frozen local Vite v16; reviewed native v30 unchanged",
-  "scope": "Stable single-player preview; remaining native actors, full art/story/listening and physical-device acceptance remain open.",
+  "checkpoint": "core-v17/native-v35",
+  "archive_sha256": "f261bd159c416985ea97188dfc0acdca49c700dbd8b33545729106a4979ec290",
+  "artifact_files": 363,
+  "game_source_commit": "6a9201620acfa66f271a294aa45612202c614f65",
+  "source": "Frozen clean local source and actual nativev35 input hashes",
+  "scope": "Stable single-player preview: all five native allies, compact portrait HUD, corrected cancellation and Gemma exposed skin. Full artistic/story/listening/physical-device acceptance remains separate.",
   "old_assets_preserved": [
+    "assets/audio/combat/LICENSE-Kenney.txt",
+    "assets/audio/combat/metal.ogg",
+    "assets/combat/Build/combat-build-v30.data",
+    "assets/combat/Build/combat-build-v30.framework.js",
+    "assets/combat/Build/combat-build-v30.loader.js",
+    "assets/combat/Build/combat-build-v30.wasm",
+    "assets/combat/archive-poster.png",
     "assets/combat-2ayK_ft2.css",
     "assets/combat-3mBX6nRb.js",
     "assets/combat-B48uJ5Mt.css",
     "assets/combat-BcWAOhq9.js",
+    "assets/combat-BcZ9nSUS.js",
     "assets/combat-C8g49NRp.css",
     "assets/combat-CbzOQade.js",
     "assets/combat-DAC04E6F.js",
+    "assets/combat-DV8b5FP5.css",
     "assets/index-Bt25a6Td.js",
     "assets/index-CjXYhL70.css",
     "assets/score-progress-CVXA0Tlg.js",
@@ -20,17 +29,11 @@
     "assets/story-v-L7O9Ps.css"
   ],
   "changes": [
-    "Horizontal tactical decision row; responsive labels and actual ally inspect",
-    "Fresh practice uses campaign encounter and assistance; legacy saved duels retained"
+    "Integrate Gigi,Gemma,Raven native support gestures,VFX and spatial sound",
+    "Frame all five allies and retain responsive solid2px/44px UI",
+    "Cancelled enemy staggers without a strike; JS remains damage authority",
+    "Gemma source skin geometry protected rather than faceted35k simplification"
   ],
-  "checks": {
-    "unit_passed": 183,
-    "native_inputs_unchanged": 233,
-    "two_engine_ui_layouts": 7,
-    "natural_practice_engines": [
-      "chromium",
-      "webkit"
-    ],
-    "whole_game_complete": false
-  }
+  "release_acceptance": false,
+  "browser_gate": "Local compiled two-engine all4encounters running; release blocked until actual pass"
 }

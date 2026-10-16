@@ -1,8 +1,10 @@
 # Super Model separate OVH preview
 
-core-v16/native-v30, frozen game source48d2cc9329a73bd67aa4433950bd54b66bf202f4.
-Archive and old-client files are pinned by checkpoint.json; Actions stay disabled.
-UI-only stable release: current practice, compact decision row, contextual ally
-details, unchanged native runtime. Whole-game/AAA art/device acceptance is open.
-Use the registered shared builder and SM native rolling release adapter. A Git
-push or image build is not release acceptance. Main-site integration deferred.
+core-v17/native-v35, selected game source6a9201620acfa66f271a294aa45612202c614f65.
+Archive and previous-client assets are pinned by checkpoint.json; Actions remain
+disabled. All five native allies,compact portrait HUD,own support motions and
+positioned audio. Gemini skin simplification and cancelled-enemy presentation
+repaired. Existing single-player story/voices/rules retained. Full artistic,
+story/listening and physical-device acceptance remains open; not an AAA claim.
+Use registered shared native builder and the existing SM rolling adapter.
+Image build/source provenance alone is not release acceptance. Main site deferred.
