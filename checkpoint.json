@@ -1,18 +1,26 @@
 {
-  "checkpoint": "core-v17/native-v35",
-  "archive_sha256": "f261bd159c416985ea97188dfc0acdca49c700dbd8b33545729106a4979ec290",
-  "artifact_files": 363,
-  "game_source_commit": "6a9201620acfa66f271a294aa45612202c614f65",
-  "source": "Frozen clean local source and actual nativev35 input hashes",
-  "scope": "Stable single-player preview: all five native allies, compact portrait HUD, corrected cancellation and Gemma exposed skin. Full artistic/story/listening/physical-device acceptance remains separate.",
+  "checkpoint": "core-v18/native-v36",
+  "archive_sha256": "b6f5bd7a1a91abe72b05093354bd34b0a47df7adee60bdd154bdcddf31d49616",
+  "artifact_files": 382,
+  "game_source_commit": "398a1a2d3ce7c965ff3cdba17f1e53805eb8a083",
+  "game_code_commit": "caab491e163f1e55fbe5894002bd5fbc58500db9",
+  "scope": "Stable single-player preview: revised adult Claudia costume on original identity/rig/actions; original four other native outfits retained. Synchronous pointer/keyboard/title focus,clipped scene/title,visible-time readiness and measured decoded archive download/cache. Full game/art/listening/physical-device acceptance remains open.",
   "old_assets_preserved": [
-    "assets/audio/combat/LICENSE-Kenney.txt",
-    "assets/audio/combat/metal.ogg",
+    "assets/combat-DU2VDM9f.js",
+    "assets/combat/Build/combat-build-v35.data",
+    "assets/combat/Build/combat-build-v35.framework.js",
+    "assets/combat/Build/combat-build-v35.loader.js",
+    "assets/combat/Build/combat-build-v35.wasm",
+    "assets/manifest.json",
+    "assets/rigs.json",
+    "assets/score-progress-Bplc5Gnh.js",
+    "assets/score-progress-BxjiapOk.css",
+    "assets/story-BIqmC44i.css",
+    "assets/story-Dl52z295.js",
     "assets/combat/Build/combat-build-v30.data",
     "assets/combat/Build/combat-build-v30.framework.js",
     "assets/combat/Build/combat-build-v30.loader.js",
     "assets/combat/Build/combat-build-v30.wasm",
-    "assets/combat/archive-poster.png",
     "assets/combat-2ayK_ft2.css",
     "assets/combat-3mBX6nRb.js",
     "assets/combat-B48uJ5Mt.css",
@@ -28,12 +36,25 @@
     "assets/story-59sOM4gA.js",
     "assets/story-v-L7O9Ps.css"
   ],
+  "precompressed_sidecars": [
+    "assets/combat-68IPJGD2.css.gz",
+    "assets/combat-K94XNfvu.js.gz",
+    "assets/combat/Build/combat-build-v36.data.gz",
+    "assets/combat/Build/combat-build-v36.framework.js.gz",
+    "assets/combat/Build/combat-build-v36.loader.js.gz",
+    "assets/combat/Build/combat-build-v36.wasm.gz",
+    "assets/story-DwfV2EBl.js.gz",
+    "assets/story-Dz0paIpC.css.gz",
+    "assets/visible-timeout-BxjiapOk.css.gz",
+    "assets/visible-timeout-zFKnIkwA.js.gz"
+  ],
   "changes": [
-    "Integrate Gigi,Gemma,Raven native support gestures,VFX and spatial sound",
-    "Frame all five allies and retain responsive solid2px/44px UI",
-    "Cancelled enemy staggers without a strike; JS remains damage authority",
-    "Gemma source skin geometry protected rather than faceted35k simplification"
+    "Original identity/hands/actions retained on revised Claudia outfit; explicit Bone4 actors",
+    "Fix immediate Space after closing panels and Safari title pointer return",
+    "Show real decoded-byte download progress without Content-Length; separate preparation phase",
+    "Use immutable manifest-hashed Unity cache URLs and fresh runtime pointers",
+    "Serve deterministic gzip sidecars with known compressed length; retain raw and prior client files"
   ],
   "release_acceptance": false,
-  "browser_gate": "Local compiled two-engine all4encounters running; release blocked until actual pass"
+  "browser_gate": "Passed Chromium and WebKit: 14 practice checks and all four authored encounters (10/10/11/11 checks each), desktop and two touch viewports. Physical-device and artistic acceptance remain open."
 }
