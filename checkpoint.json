@@ -1,11 +1,15 @@
 {
-  "checkpoint": "core-v18/native-v36",
-  "archive_sha256": "b6f5bd7a1a91abe72b05093354bd34b0a47df7adee60bdd154bdcddf31d49616",
-  "artifact_files": 382,
-  "game_source_commit": "398a1a2d3ce7c965ff3cdba17f1e53805eb8a083",
+  "checkpoint": "core-v19/native-v37",
+  "archive_sha256": "d8287416fa4a1143eeda7165c964f20f99597a87429399b6da8e8ce9a5a3fea2",
+  "artifact_files": 390,
+  "game_source_commit": "0da5180db34c9e42913282f3573fb710a9885e02",
   "game_code_commit": "caab491e163f1e55fbe5894002bd5fbc58500db9",
-  "scope": "Stable single-player preview: revised adult Claudia costume on original identity/rig/actions; original four other native outfits retained. Synchronous pointer/keyboard/title focus,clipped scene/title,visible-time readiness and measured decoded archive download/cache. Full game/art/listening/physical-device acceptance remains open.",
+  "scope": "Revised Sami on retained original rig/actions/expressions; repaired inset neck and isolated hair fragments,protected LODs,separate borrowed-copy body texture. Revised Claudia retained. Gameplay/UI source unchanged.",
   "old_assets_preserved": [
+    "assets/combat/Build/combat-build-v36.data",
+    "assets/combat/Build/combat-build-v36.framework.js",
+    "assets/combat/Build/combat-build-v36.loader.js",
+    "assets/combat/Build/combat-build-v36.wasm",
     "assets/combat-DU2VDM9f.js",
     "assets/combat/Build/combat-build-v35.data",
     "assets/combat/Build/combat-build-v35.framework.js",
@@ -34,9 +38,7 @@
     "assets/index-CjXYhL70.css",
     "assets/score-progress-CVXA0Tlg.js",
     "assets/story-59sOM4gA.js",
-    "assets/story-v-L7O9Ps.css"
-  ],
-  "precompressed_sidecars": [
+    "assets/story-v-L7O9Ps.css",
     "assets/combat-68IPJGD2.css.gz",
     "assets/combat-K94XNfvu.js.gz",
     "assets/combat/Build/combat-build-v36.data.gz",
@@ -48,13 +50,26 @@
     "assets/visible-timeout-BxjiapOk.css.gz",
     "assets/visible-timeout-zFKnIkwA.js.gz"
   ],
-  "changes": [
-    "Original identity/hands/actions retained on revised Claudia outfit; explicit Bone4 actors",
-    "Fix immediate Space after closing panels and Safari title pointer return",
-    "Show real decoded-byte download progress without Content-Length; separate preparation phase",
-    "Use immutable manifest-hashed Unity cache URLs and fresh runtime pointers",
-    "Serve deterministic gzip sidecars with known compressed length; retain raw and prior client files"
+  "precompressed_sidecars": [
+    "assets/combat-68IPJGD2.css.gz",
+    "assets/combat-K94XNfvu.js.gz",
+    "assets/combat/Build/combat-build-v36.data.gz",
+    "assets/combat/Build/combat-build-v36.framework.js.gz",
+    "assets/combat/Build/combat-build-v36.loader.js.gz",
+    "assets/combat/Build/combat-build-v36.wasm.gz",
+    "assets/story-DwfV2EBl.js.gz",
+    "assets/story-Dz0paIpC.css.gz",
+    "assets/visible-timeout-BxjiapOk.css.gz",
+    "assets/visible-timeout-zFKnIkwA.js.gz",
+    "assets/combat/Build/combat-build-v37.data.gz",
+    "assets/combat/Build/combat-build-v37.framework.js.gz",
+    "assets/combat/Build/combat-build-v37.loader.js.gz",
+    "assets/combat/Build/combat-build-v37.wasm.gz"
   ],
   "release_acceptance": false,
-  "browser_gate": "Passed Chromium and WebKit: 14 practice checks and all four authored encounters (10/10/11/11 checks each), desktop and two touch viewports. Physical-device and artistic acceptance remain open."
+  "browser_gate": "Chromium and WebKit each14practice checks,first authored encounter10checks,sixUI/layout checks. Other3 authored encounters use unchanged v18 gameplay source;not newly traversed onv37.",
+  "limits": [
+    "Whole game artistic/listening and physical-device/GPU acceptance remain open.",
+    "Chromium UnityCache,other3 revised costumes,full close-up anatomy and sustained performance remain open."
+  ]
 }
