@@ -7,6 +7,7 @@ const out = {};
 async function story(initScript) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   if (initScript) await ctx.addInitScript(initScript);
+  if (process.env.SM_RUNTIME) await ctx.route('**/assets/combat/runtime.json', r => r.fulfill({ path: process.env.SM_RUNTIME, contentType: 'application/json' }));
   const p = await ctx.newPage();
   await p.goto(base + '/'); await p.evaluate(() => localStorage.clear()); await p.reload();
   await p.getByRole('button', { name: 'New story', exact: true }).click(); await p.waitForTimeout(1200);
@@ -57,7 +58,7 @@ if (!skipF3) { // F3: page hidden (no frames) while the native combat starts, sh
   const whileHidden = await p.evaluate(() => ({ error: !document.getElementById('runtime-error').hidden, text: document.getElementById('runtime-error').innerText.slice(0, 120) }));
   await p.evaluate(() => window.__smShow());
   const ok = await p.waitForFunction(() => /Your turn/.test(document.body.innerText) || !document.getElementById('runtime-error').hidden, null, { timeout: 60000 }).then(() => p.evaluate(() => /Your turn/.test(document.body.innerText) ? 'started' : 'error: ' + document.getElementById('runtime-error').innerText.slice(0, 120))).catch(() => 'timeout');
-  out.F3 = { url: p.url(), hiddenFor: '25s', whileHidden, afterShow: ok };
+  out.F3 = { runtime: await p.evaluate(() => fetch('/assets/combat/runtime.json').then(r => r.json()).then(j => j.loader)), url: p.url(), hiddenFor: '25s', whileHidden, afterShow: ok };
   await p.context().close();
 }
 console.log(JSON.stringify(out, null, 1));

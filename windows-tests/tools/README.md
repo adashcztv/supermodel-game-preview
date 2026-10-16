@@ -9,7 +9,7 @@ Install once in any scratch folder: `npm install playwright@1.63.0` (browsers fr
   `report.json`, `log.txt` and screenshots. `chromium`/`msedge` use the GPU (ANGLE D3D11).
 - `node regress-f1f2f3.mjs <baseUrl>` checks F1 (Space after closing a panel) and
   F2 (scene scroll on scrollIntoView / Tab).
-- `node regress-extra.mjs <baseUrl>` checks keyboard focus restore, Skip/Menu/House
+- `[SM_RUNTIME=<runtime.json>] node regress-extra.mjs <baseUrl>` checks keyboard focus restore, Skip/Menu/House
   pointer paths and F3 (page hidden for 25 s during the native start).
 
 Local only; never point these at production with real player data.
