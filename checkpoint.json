@@ -1,30 +1,17 @@
 {
-  "checkpoint": "core-v20/native-v38",
-  "game_source_commit": "2c0db6bc60e36409b2bdbe21d87086e22215d1ab",
-  "frontend_code_commit": "caab491e163f1e55fbe5894002bd5fbc58500db9",
-  "parent_image": "sha256:11fe524be44820e03547ab0639359b9a3f62633207f9f8879cf10ae8ca383a8d",
-  "artifact_files": 402,
-  "retained_exact_files": 389,
-  "allowed_pointer_replacement": [
-    "assets/combat/runtime.json"
+  "checkpoint": "core-v22/native-v39",
+  "game_source_commit": "25cb4ce6597198c9ed17aa66cca5f5d81fe06863",
+  "frontend_code_commit": "9bed90f9a59527f41032ced6a7f73a5dc2268511",
+  "native_inputs": 321,
+  "package_sha256": "7fe096f714f5b6a8eec2942a21c4bbfb1aca1b71ff3e8dd9a4a651107202069d",
+  "archive_sha256": "970ddc1d507ca4dceba701ef4de40b141c8d71454509392e14dbcd3dd935fd67",
+  "archive_bytes": 188398604,
+  "artifact_files": 418,
+  "retained_exact_parent_files": 400,
+  "changed_paths": [
+    "assets/combat/runtime.json",
+    "combat/index.html"
   ],
-  "new_files": [
-    "assets/combat/Build/combat-build-v38.loader.js",
-    "assets/combat/Build/combat-build-v38.loader.js.gz",
-    "assets/combat/Build/combat-build-v38.loader.js.br",
-    "assets/combat/Build/combat-build-v38.data",
-    "assets/combat/Build/combat-build-v38.data.gz",
-    "assets/combat/Build/combat-build-v38.data.br",
-    "assets/combat/Build/combat-build-v38.framework.js",
-    "assets/combat/Build/combat-build-v38.framework.js.gz",
-    "assets/combat/Build/combat-build-v38.framework.js.br",
-    "assets/combat/Build/combat-build-v38.wasm",
-    "assets/combat/Build/combat-build-v38.wasm.gz",
-    "assets/combat/Build/combat-build-v38.wasm.br"
-  ],
-  "archive_sha256": "2c0e411cf73a799b4c67ea9ccc4d54e17ef2b0028128a6aa12ecedc18f05299a",
-  "new_paid_generations": 0,
-  "model_animation_source_changes": false,
-  "release_acceptance": false,
-  "acceptance": "Native source guard,seven material views and action gate pass;new delivery browser/image/public gates separate."
+  "source_build_is_release_acceptance": false,
+  "whole_game_complete": false
 }
